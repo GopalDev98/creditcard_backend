@@ -21,6 +21,12 @@ app.use(
       // Allow requests with no origin (mobile apps, Postman, etc.)
       if (!origin) return callback(null, true);
       
+      // Check if wildcard is enabled
+      if (config.cors.allowedOrigins.includes('*')) {
+        return callback(null, true);
+      }
+      
+      // Check if origin is in allowed list
       if (config.cors.allowedOrigins.includes(origin)) {
         callback(null, true);
       } else {
