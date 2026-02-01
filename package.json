@@ -9,6 +9,7 @@
     "start": "node src/server.js",
     "test": "jest --coverage",
     "test:watch": "jest --watch",
+    "test:health": "node test-health.js",
     "lint": "eslint .",
     "format": "prettier --write ."
   },
