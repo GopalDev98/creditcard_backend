@@ -137,12 +137,10 @@ const applicationSchema = new mongoose.Schema(
 );
 
 // Indexes for performance
-applicationSchema.index({ applicationNumber: 1 });
+// Note: applicationNumber and personalInfo.panCard already have indexes from unique: true
 applicationSchema.index({ userId: 1 });
-applicationSchema.index({ 'personalInfo.panCard': 1 });
 applicationSchema.index({ status: 1 });
 applicationSchema.index({ submittedAt: -1 });
-applicationSchema.index({ 'personalInfo.panCard': 1, submittedAt: -1 });
 
 // Virtual for age calculation
 applicationSchema.virtual('age').get(function () {
