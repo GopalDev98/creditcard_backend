@@ -66,10 +66,16 @@ app.get('/', (req, res) => {
     success: true,
     message: 'Credit Card Application API',
     version: '1.0.0',
+    status: 'running',
     endpoints: {
+      ping: '/api/ping',
       health: '/api/health',
       auth: '/api/auth',
       applications: '/api/applications',
+    },
+    documentation: {
+      healthCheck: 'See API-HEALTH.md for health check documentation',
+      deployment: 'See DEPLOYMENT.md for deployment guide',
     },
   });
 });
