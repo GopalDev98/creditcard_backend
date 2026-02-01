@@ -5,7 +5,7 @@
  * Tests the /api/ping and /api/health endpoints
  */
 
-const http = require('http');
+import http from 'http';
 
 const PORT = process.env.PORT || 5000;
 const HOST = process.env.HOST || 'localhost';
